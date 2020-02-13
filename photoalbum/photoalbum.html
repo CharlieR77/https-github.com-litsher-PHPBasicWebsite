@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Photo Album Viewer</title>
+<style>
+a:visited{color:black;font-family:verdana}
+a:link{color:black;font-family:verdana}
+a:hover{color:blue;font-family:verdana}
+
+p, td {color:black;font-family:verdana;font-size:8pt}
+h1 {color:black;font-family:verdana;font-size:12pt}
+</style>
+<script>
+
+/****************************************************/
+/** Free script for any use, but please include    **/
+/** a link to i-code.co.uk in any redistribution.  **/
+/**                                                **/
+/** Author : Stephen Griffin, www.i-code.co.uk     **/
+/****************************************************/
+
+function changeImage()
+{
+	var list = document.getElementById('optionlist');
+	document.mainimage.src = list.options[list.selectedIndex].value;
+}
+
+function prevImage()
+{
+	var list = document.getElementById('optionlist');
+	if(list.selectedIndex == 0)
+	{
+		list.selectedIndex = list.options.length-1;
+	}
+	else
+	{
+		list.selectedIndex--;
+	}
+	changeImage();
+}
+
+function nextImage()
+{
+	var list = document.getElementById('optionlist');
+	if(list.selectedIndex == list.options.length-1)
+	{
+		list.selectedIndex = 0;
+	}
+	else
+	{
+		list.selectedIndex++;
+	}
+	changeImage();
+}
+</script>
+</head>
+<body onLoad="javascript:changeImage()">
+
+<center><h1>Photo Album Viewer</h1></center>
+<table align="center" border="0">
+<tr>
+<td colspan="3" align="center"><img name="mainimage" border="1"></td>
+</tr>
+<tr>
+	<td align="left"><input type="button" value="<- Back" onClick="javascript:prevImage()"></td>
+	<td align="center">
+	
+	<select id="optionlist" onChange="javascript:changeImage()">
+		<option value="image1.jpg">First Image</option>
+		<option value="image2.jpg">Second Image</option>
+		<option value="image3.jpg">Third Image</option>
+		<option value="image4.jpg">Fourth Image</option>
+		<option value="image5.jpg">Fifth Image</option>
+	</select>
+	
+	</td>
+	<td align="right"><input type="button" value="Next->" onClick="javascript:nextImage()"></td>
+</tr>
+</table>
+<p align="center"><a href="http://www.i-code.co.uk">Javascript</a> | <a href="http://www.i-code.co.uk/javascript/photoalbum.php">Photo Album Viewer</a></p>
+</body>
+</html>

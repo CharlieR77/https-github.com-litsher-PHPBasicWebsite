@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Uitklapmenu</title>
+ </head>
+ 
+ <body>
+  <ul>
+   <li>
+    <span id="zoek" onclick="openSearch()"></span>
+    
+    <ul id="search">
+     <li><a href="http://www.google.nl/">Google</a></li>
+     <li><a href="http://www.bing.nl/">Bing</a></li>
+     <li><a href="http://www.yahoo.nl/">Yahoo</a></li>
+    </ul>
+   </li>
+   
+   <li>
+    <span onclick="openNews()">Nieuws</span>
+    
+    <ul id="news">
+     <li><a href="http://www.nu.nl/">Nu.nl</a></li>
+     <li><a href="http://www.nieuws.nl/">Nieuws.nl</a></li>
+    </ul>
+   </li>
+  </ul>
+
+  <script>
+   var search = document.getElementById('search');
+   var zoek = document.getElementById('zoek');
+   var news = document.getElementById('news');
+   zoek.innerHTML = 'Read More';
+   
+   search.style.display = 'none';
+   news.style.display = 'none';
+   
+   function openSearch() {
+    if (search.style.display === 'none') {
+     search.style.display = 'block';
+     search.innerHTML = 'Hallo Wereld';
+     zoek.innerHTML = 'Read Less';
+     
+    }
+    else {
+     search.style.display = 'none';
+     zoek.innerHTML = 'Read More';
+    }
+    
+    news.style.display = 'none';
+   }
+   
+   function openNews() {
+    if (news.style.display === 'none') {
+     news.style.display = 'block';
+    }
+    else {
+     news.style.display = 'none';
+    }
+    
+    search.style.display = 'none';
+   }
+  </script>
+ </body>
+</html>

@@ -1,0 +1,40 @@
+*{
+	margin: 0;
+	Padding: 0;
+}
+body{
+	background-color: grey;
+}
+#left{
+	background:url('left.png');
+	width: 600px;
+	height: 800px;
+	float: left;
+}
+#right{
+	background:url('right.png');
+	width: 600px;
+	height: 800px;
+	float: left;
+}
+.clear{
+	clear: both;
+}
+.container{
+	width: 1200px;
+	margin: 0 auto;
+	height: 800px;
+	position: relative;
+	margin-top: 20px;
+}
+.button{
+	background:url('click.png');
+	backgound-repeat: no repeat;
+	position: absolute;
+	top: 330px;
+	left: 500px;
+	width: 225px;
+	height: 75px;
+	font-size: 30px;
+	font-weight: bolder;
+}
